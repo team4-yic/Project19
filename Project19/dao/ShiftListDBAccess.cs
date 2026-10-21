@@ -28,7 +28,7 @@ namespace Project19.dao
                         {
                             int shiftId = (int)reader["ShiftID"];
                             int staffId = (int)reader["StaffID"];
-                            string shiftDate = (string)reader["ShiftID"];
+                            string shiftDate = (string)reader["ShiftDate"];
                             string startTime = (string)reader["StartTime"];
                             string endTime = (string)reader["EndTime"];
                             string status = (string)reader["Status"];
