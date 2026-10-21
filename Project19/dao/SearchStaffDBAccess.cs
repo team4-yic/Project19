@@ -1,0 +1,1 @@
+SELECT StaffID, Username, FullName, Email, PhoneNumber FROM Staff WHERE StaffID = inStaffID OR Username = inUsername OR FullName = inFullName OR Email = inEmail OR PhoneNumber = inPhoneNumber;
