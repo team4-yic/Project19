@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Project19.dao
 {
-    internal class ShiftListDBAccess : SQLServerConeection
+    internal class ShiftListDBAccess : SQLServerConnection
     {
         public List<Shift> GetShiftList()
         {

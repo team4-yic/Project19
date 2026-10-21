@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Project19.dao
 {
-    public class LoginSelectDBAccess : SQLServerConeection
+    public class LoginSelectDBAccess : SQLServerConnection
     {
         public string PasswordSelect(string userName) {
             string passHash = "";
