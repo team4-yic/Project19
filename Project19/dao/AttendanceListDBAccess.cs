@@ -9,7 +9,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project19.dao
 {
-    internal class AttendanceListDBAccess : SQLServerConeection
+    internal class AttendanceListDBAccess : SQLServerConnection
     {
         public List<Attendance> GetAttendancesList()
         {

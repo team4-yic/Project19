@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Project19.dao
 {
-    public class SQLServerConeection
+    public class SQLServerConnection
     {
         public static SqlConnection CreateConnection()
         {
