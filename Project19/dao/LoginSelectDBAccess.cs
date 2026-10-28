@@ -36,6 +36,7 @@ namespace Project19.dao
                 {
                     Debug.WriteLine("取得に失敗しました");
                     Debug.WriteLine(ex.Message.ToString());
+                    con.Close();
                     return passHash;
                 }
                 Debug.WriteLine("取得に成功しました");

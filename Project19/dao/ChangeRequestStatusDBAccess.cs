@@ -48,6 +48,7 @@ namespace Project19.dao
                 {
                     Debug.WriteLine("更新に失敗しました");
                     Debug.WriteLine(ex.Message.ToString());
+                    con.Close();
                     return;
                 }
                 Debug.WriteLine("更新に成功しました");
