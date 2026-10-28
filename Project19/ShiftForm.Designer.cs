@@ -38,6 +38,7 @@
             deletebutton = new Button();
             textBox4 = new TextBox();
             monthCalendar1 = new MonthCalendar();
+            textBox5 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             textBox1.Location = new Point(12, 12);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "氏名";
-            textBox1.Size = new Size(801, 31);
+            textBox1.Size = new Size(644, 31);
             textBox1.TabIndex = 2;
             textBox1.TextChanged += textBox1_TextChanged;
             // 
@@ -79,7 +80,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(337, 95);
+            textBox3.Location = new Point(336, 95);
             textBox3.Name = "textBox3";
             textBox3.PlaceholderText = "終了時刻";
             textBox3.Size = new Size(320, 31);
@@ -90,7 +91,7 @@
             dateTextBox.Location = new Point(12, 54);
             dateTextBox.Name = "dateTextBox";
             dateTextBox.PlaceholderText = "日付";
-            dateTextBox.Size = new Size(801, 31);
+            dateTextBox.Size = new Size(800, 31);
             dateTextBox.TabIndex = 5;
             dateTextBox.Click += dateTextBox_OnClick;
             dateTextBox.TextChanged += dateTextBox_TextChanged;
@@ -106,7 +107,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(663, 95);
+            textBox4.Location = new Point(662, 95);
             textBox4.Name = "textBox4";
             textBox4.PlaceholderText = "勤続月数";
             textBox4.Size = new Size(150, 31);
@@ -114,17 +115,27 @@
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(515, 80);
+            monthCalendar1.Location = new Point(515, 85);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 6;
             monthCalendar1.Visible = false;
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+            // 
+            // textBox5
+            // 
+            textBox5.ImeMode = ImeMode.Disable;
+            textBox5.Location = new Point(662, 12);
+            textBox5.Name = "textBox5";
+            textBox5.PlaceholderText = "ID";
+            textBox5.Size = new Size(151, 31);
+            textBox5.TabIndex = 9;
             // 
             // ShiftForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1002, 622);
+            Controls.Add(textBox5);
             Controls.Add(monthCalendar1);
             Controls.Add(textBox4);
             Controls.Add(deletebutton);
@@ -153,5 +164,6 @@
         private Button deletebutton;
         private TextBox textBox4;
         private MonthCalendar monthCalendar1;
+        private TextBox textBox5;
     }
 }

@@ -12,9 +12,9 @@ namespace Project19.dao
 {
     internal class ShiftRequestsDBAccess : SQLServerConeection
     {
-        public List<ShiftRequest> GetShiftRequestList()
+        public List<ShiftRequests> GetShiftRequestList()
         {
-            List<ShiftRequest> shiftRequestList = new List<ShiftRequest>();
+            List<ShiftRequests> shiftRequestList = new List<ShiftRequests>();
 
             SqlConnection con = CreateConnection();
             string sql = "SELECT * FROM ShiftRequests";

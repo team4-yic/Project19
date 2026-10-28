@@ -21,8 +21,8 @@ public class ShiftRequests
 
 	public int RequestID { get { return requesetID; } set { requesetID = value; } }
 	public int StaffID { get {return staffID; } set { staffID = value; } }
-	public string OriginalShiftID{ get { return originalShiftID; } set { originalShiftID  = value; }  }
-	public string RequestedShiftID { get { return requestedShiftID; } set { requestedShiftID = value; } }
+	public int OriginalShiftID{ get { return originalShiftID; } set { originalShiftID  = value; }  }
+	public int RequestedShiftID { get { return requestedShiftID; } set { requestedShiftID = value; } }
 	public string RequestDate { get { return requestDate; } set { requestDate = value; } }
 	public string Status { get { return status; } set { status = value; } }
 }
