@@ -51,5 +51,4 @@ namespace Project19.dao
             return shiftRequestList;
         }
     }
->>>>>>> 5715087d84f15c6637f96314c056c624b15859bb
 }
