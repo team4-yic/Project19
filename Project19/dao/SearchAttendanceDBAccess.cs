@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.Design;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project19.dao
@@ -19,17 +20,21 @@ namespace Project19.dao
             SqlConnection con = CreateConnection();
             string sql = "SELECT Staff.StaffID , Staff.FullName , Shifts.ShiftDate , Attendance.CheckInTime , Attendance.CheckOutTime FROM Attendance JOIN Staff ON Attendance.StaffID = Staff.StaffID JOIN Shifts ON Attendance.ShiftID = Shifts.ShiftID";
 
-            if (id != null || date != null)
-            {
-                sql += " WHERE";
-            }
             if (id != null)
             {
-                sql += " Attendance.StaffID = @staffId";
+                 sql += " WHERE Attendance.StaffID = @staffId";
+                
             }
             if (date != null)
             {
-                sql += " Shifts.ShiftDate = @shiftDate";
+                if (sql.Contains("WHERE"))
+                {
+                    sql += " AND Shifts.ShiftDate = @shiftDate";
+                }
+                else
+                {
+                    sql += " WHERE Shifts.ShiftDate = @shiftDate";
+                }
             }
             Debug.WriteLine("接続成功");
 
