@@ -64,11 +64,11 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Project19.dao
 {
-    internal class ShiftRequestsDBAccess : SQLServerConeection
+    internal class ShiftRequestsDBAccess : SQLServerConnection
     {
-        public List<ShiftRequest> GetShiftRequestList()
+        public List<ShiftRequests> GetShiftRequestList()
         {
-            List<ShiftRequest> shiftRequestList = new List<ShiftRequest>();
+            List<ShiftRequests> shiftRequestList = new List<ShiftRequests>();
 
             SqlConnection con = CreateConnection();
             string sql = "SELECT * FROM ShiftRequests";
@@ -88,8 +88,8 @@ namespace Project19.dao
                             int requestedShiftId = (int)reader["RequestShiftID"];
                             string requestDate = (string)reader["RequestDate"];
                             string status = (string)reader["Status"];
-                            ShiftRequest shiftrequest = new ShiftRequest(requestId, staffId, originalShiftId, requestedShiftId, requestDate, status);
-                            shiftRequesList.Add(shiftrequest);
+                            ShiftRequests shiftrequest = new ShiftRequests(requestId, staffId, originalShiftId, requestedShiftId, requestDate, status);
+                            shiftRequestList.Add(shiftrequest);
                         }
                     }
                 }
