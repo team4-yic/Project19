@@ -16,7 +16,7 @@ namespace Project19.dao
             List<Staff> SearchStaffList = new List<Staff>();
 
             SqlConnection con = CreateConnection();
-            string sql = "SELECT DISTINCT * FROM Staff WHERE 1 = 1";
+            string sql = "SELECT DISTINCT * FROM Staff WHERE 0 = 0";
 
             {
                 Debug.WriteLine("接続成功");
@@ -77,6 +77,6 @@ namespace Project19.dao
             con.Close();
             return SearchStaffList;
 
-        } 
+        }
     }
 }
