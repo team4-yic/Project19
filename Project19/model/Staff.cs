@@ -21,9 +21,9 @@ public class Staff
 	private string phoneNumber;
 	private string emproymentDate;
 
-	public int StaffID {  get { return staffID; } set { staffID = value; } }
-	public string StaffName {  get { return staffName; } set { staffName = value; } }
-	public string PassWordHash {  get { return passWordHash; } set { passWordHash = value; } }
+    public int StaffID { get { return staffID; } set { staffID = value; } }
+    public string StaffName { get { return staffName; } set { staffName = value; } }
+    public string PassWordHash { get { return passWordHash; } set { passWordHash = value; } }
 	public string FullName { get { return fullName; } set { fullName = value; } }
 	public string Email { get { return email; } set { email = value; } }
 	public string PhoneNumber { get { return phoneNumber; } set { phoneNumber = value; } }
