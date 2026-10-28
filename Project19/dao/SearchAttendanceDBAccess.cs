@@ -17,15 +17,19 @@ namespace Project19.dao
 
             List<List<string>> list = new List<List<string>>();
             SqlConnection con = CreateConnection();
-            string sql = "SELECT Staff.StaffID , Staff.FullName , Shifts.ShiftDate , Attendance.CheckInTime , Attendance.CheckOutTime FROM Attendance JOIN Staff ON Attendance.StaffID = Staff.StaffID JOIN Shifts ON Attendance.ShiftID = Shifts.ShiftID ";
+            string sql = "SELECT Staff.StaffID , Staff.FullName , Shifts.ShiftDate , Attendance.CheckInTime , Attendance.CheckOutTime FROM Attendance JOIN Staff ON Attendance.StaffID = Staff.StaffID JOIN Shifts ON Attendance.ShiftID = Shifts.ShiftID";
 
+            if (id != null || date != null)
+            {
+                sql += " WHERE";
+            }
             if (id != null)
             {
-                sql += "WHERE Attendance.StaffID = @staffId;";
+                sql += " Attendance.StaffID = @staffId";
             }
             if (date != null)
             {
-                sql += "WHERE Shifts.ShiftDate = @shiftDate;";
+                sql += " Shifts.ShiftDate = @shiftDate";
             }
             Debug.WriteLine("接続成功");
 
