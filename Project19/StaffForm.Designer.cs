@@ -31,10 +31,11 @@
             PTJListView = new DataGridView();
             FullNameTextBox = new TextBox();
             seachPTJTextBox = new Button();
-            deletePTJTextBox = new Button();
+            deletePTJBox = new Button();
             UserNameTextBox = new TextBox();
             TellTextBox = new TextBox();
             EmailTextBox = new TextBox();
+            addPTJBox = new Button();
             ((System.ComponentModel.ISupportInitialize)PTJListView).BeginInit();
             SuspendLayout();
             // 
@@ -66,14 +67,14 @@
             seachPTJTextBox.Text = "検索";
             seachPTJTextBox.UseVisualStyleBackColor = true;
             // 
-            // deletePTJTextBox
+            // deletePTJBox
             // 
-            deletePTJTextBox.Location = new Point(866, 533);
-            deletePTJTextBox.Name = "deletePTJTextBox";
-            deletePTJTextBox.Size = new Size(122, 77);
-            deletePTJTextBox.TabIndex = 6;
-            deletePTJTextBox.Text = "削除";
-            deletePTJTextBox.UseVisualStyleBackColor = true;
+            deletePTJBox.Location = new Point(866, 533);
+            deletePTJBox.Name = "deletePTJBox";
+            deletePTJBox.Size = new Size(122, 77);
+            deletePTJBox.TabIndex = 6;
+            deletePTJBox.Text = "削除";
+            deletePTJBox.UseVisualStyleBackColor = true;
             // 
             // UserNameTextBox
             // 
@@ -99,19 +100,29 @@
             EmailTextBox.Size = new Size(408, 31);
             EmailTextBox.TabIndex = 8;
             // 
-            // StuffForm
+            // addPTJBox
+            // 
+            addPTJBox.Location = new Point(738, 533);
+            addPTJBox.Name = "addPTJBox";
+            addPTJBox.Size = new Size(122, 77);
+            addPTJBox.TabIndex = 10;
+            addPTJBox.Text = "追加";
+            addPTJBox.UseVisualStyleBackColor = true;
+            // 
+            // StaffForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1002, 622);
+            Controls.Add(addPTJBox);
             Controls.Add(TellTextBox);
             Controls.Add(EmailTextBox);
             Controls.Add(UserNameTextBox);
-            Controls.Add(deletePTJTextBox);
+            Controls.Add(deletePTJBox);
             Controls.Add(seachPTJTextBox);
             Controls.Add(FullNameTextBox);
             Controls.Add(PTJListView);
-            Name = "StuffForm";
+            Name = "StaffForm";
             Text = "スタッフ追加・削除";
             Load += PTJForm_Load;
             ((System.ComponentModel.ISupportInitialize)PTJListView).EndInit();
@@ -124,9 +135,10 @@
         private DataGridView PTJListView;
         private TextBox FullNameTextBox;
         private Button seachPTJTextBox;
-        private Button deletePTJTextBox;
+        private Button deletePTJBox;
         private TextBox UserNameTextBox;
         private TextBox TellTextBox;
         private TextBox EmailTextBox;
+        private Button addPTJBox;
     }
 }
