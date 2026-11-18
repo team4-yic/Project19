@@ -49,7 +49,7 @@ namespace Project19
             errorLabel.Visible = false;
             idErrorlabel.Visible = false;
             passErrorlabel.Visible = false;
-            
+
             inputPass = passTextBox.Text;
             inputId = idTextBox.Text;
             string passHash = HashPassword(inputPass);
@@ -71,7 +71,8 @@ namespace Project19
                     passErrorlabel.Visible = true;
                 }
             }
-            else if (pass.Equals(passHash)){
+            else if (pass.Equals(passHash))
+            {
                 DashForm dashForm = new DashForm();
                 dashForm.StartPosition = FormStartPosition.Manual;
                 dashForm.Location = this.Location;

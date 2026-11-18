@@ -86,6 +86,7 @@
             // idErrorlabel
             // 
             idErrorlabel.AutoSize = true;
+            idErrorlabel.ForeColor = Color.Red;
             idErrorlabel.Location = new Point(218, 128);
             idErrorlabel.Name = "idErrorlabel";
             idErrorlabel.Size = new Size(212, 25);
@@ -96,6 +97,7 @@
             // passErrorlabel
             // 
             passErrorlabel.AutoSize = true;
+            passErrorlabel.ForeColor = Color.Red;
             passErrorlabel.Location = new Point(218, 206);
             passErrorlabel.Name = "passErrorlabel";
             passErrorlabel.Size = new Size(207, 25);
@@ -106,6 +108,7 @@
             // errorLabel
             // 
             errorLabel.AutoSize = true;
+            errorLabel.ForeColor = Color.Red;
             errorLabel.Location = new Point(218, 50);
             errorLabel.Name = "errorLabel";
             errorLabel.Size = new Size(217, 25);
