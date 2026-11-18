@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 namespace Project19.dao
 
@@ -28,19 +29,19 @@ namespace Project19.dao
 
                     if (userName != null)
                     {
-                        sql += "AND useName = Username ";
+                        sql += "AND UserName = @useName ";
                     }
                     if (fullName != null)
                     {
-                        sql += "AND fullName = FullName ";
+                        sql += "AND FullName = N@fullName ";
                     }
                     if (email != null)
                     {
-                        sql += "AND email = Email ";
+                        sql += "AND Email = @email ";
                     }
                     if (phoneNumber != null)
                     {
-                        sql += "AND phoneNumber = PhoneNumber ";
+                        sql += "AND PhoneNumber  = @phoneNumber ";
                     }
                 }
             }
@@ -49,6 +50,10 @@ namespace Project19.dao
 
                 using (SqlCommand command = new SqlCommand(sql, con))
                 {
+                    command.Parameters.AddWithValue("@useName", userName);
+                    command.Parameters.AddWithValue("@fullName", fullName);
+                    command.Parameters.AddWithValue("@email", email);
+                    command.Parameters.AddWithValue("@phoneNumber", phoneNumber);
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {

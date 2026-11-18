@@ -13,7 +13,7 @@ namespace Project19.dao
         public void StaffAdd(string hashPass, string userName, string fullName, string email, string phone, string employmentDate)
         {
             SqlConnection con = CreateConnection();
-            string sql = "INSERT INTO Shifts (Username PasswordHash FullName Email PhoneNumber EmploymentDate) VALUES (@userName, @hashPass, @fullName, @email, @phone, @employmentDate);";
+            string sql = "INSERT INTO Shifts (Username, PasswordHash, FullName Email, PhoneNumber, EmploymentDate, Status) VALUES (@userName, @hashPass, N@fullName, @email, @phone, @employmentDate, N'申請中');";
 
             Debug.WriteLine("接続成功");
             using (SqlCommand command = new SqlCommand(sql, con))

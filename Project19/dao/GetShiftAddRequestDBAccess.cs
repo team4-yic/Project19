@@ -12,8 +12,7 @@ namespace Project19.dao
 {
     internal class GetShiftAddRequestDBAccess : SQLServerConnection
     {
-        UtilityArrayConverter converter = new UtilityArrayConverter();
-        public string[,] GetShiftAddRequest(string staffId, string staffName, string date)
+        public List<List<string>> GetShiftAddRequest(string staffId, string staffName, string date)
         {
             List<List<string>> list = new List<List<string>>();
             SqlConnection con = CreateConnection();
@@ -25,7 +24,7 @@ namespace Project19.dao
             }
             if (staffName != null)
             {
-                sql += " AND S.FullName = @staffName";
+                sql += " AND S.FullName = N@staffName";
             }
             if (date != null)
             {
@@ -62,8 +61,7 @@ namespace Project19.dao
             }
             con.Close();
 
-            string[,] array = converter.ArrayConvert(list);
-            return array;
+            return list;
 
         }
     }

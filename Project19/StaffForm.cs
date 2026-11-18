@@ -29,6 +29,7 @@ namespace Project19
                     new Person { Name = "田中", Age = 30 },
                     new Person { Name = "佐藤", Age = 25 }
                 };
+
             PTJListView.DataSource = list;
         }
 

@@ -30,7 +30,7 @@ namespace Project19.dao
                     break;
             }
             SqlConnection con = CreateConnection();
-            string sql = "UPDATE Requests SET Status = @status";
+            string sql = "UPDATE Requests SET Status = N@status";
 
             Debug.WriteLine("接続成功");
             using (SqlCommand command = new SqlCommand(sql, con))

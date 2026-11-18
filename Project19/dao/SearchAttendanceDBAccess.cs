@@ -12,13 +12,12 @@ namespace Project19.dao
 {
     internal class SearchAttendanceDBAccess : SQLServerConnection
     {
-        public string[,] SearchAttendance(string id, string date)
+        public List<List<string>> SearchAttendance(string id, string date)
         {
-            UtilityArrayConverter converter = new UtilityArrayConverter();
-
             List<List<string>> list = new List<List<string>>();
             SqlConnection con = CreateConnection();
-            string sql = "SELECT Staff.StaffID , Staff.FullName , Shifts.ShiftDate , Attendance.CheckInTime , Attendance.CheckOutTime FROM Attendance JOIN Staff ON Attendance.StaffID = Staff.StaffID JOIN Shifts ON Attendance.ShiftID = Shifts.ShiftID";
+            string sql = "SELECT Staff.StaffID , Staff.FullName , Shifts.ShiftDate , Attendance.CheckInTime , Attendance.CheckOutTime FROM Attendance " +
+                "JOIN Staff ON Attendance.StaffID = Staff.StaffID JOIN Shifts ON Attendance.ShiftID = Shifts.ShiftID";
 
             if (id != null)
             {
@@ -75,9 +74,7 @@ namespace Project19.dao
             }
             con.Close();
 
-            string[,] array = converter.ArrayConvert(list);
-
-            return array;
+            return list;
         }
     }
 }

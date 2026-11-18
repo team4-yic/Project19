@@ -15,7 +15,7 @@ namespace Project19.dao
         public void ShiftAdd(string staffId, string date, string startTime, string endTime)
         {
             SqlConnection con = CreateConnection();
-            string sql = "INSERT INTO Shifts (StaffId, ShiftDate, StartTime, EndDate, Status) VALUES (@staffId, @shiftDate, @startTime, @endTime, '申請中')";
+            string sql = "INSERT INTO Shifts (StaffId, ShiftDate, StartTime, EndDate, Status) VALUES (@staffId, @shiftDate, @startTime, @endTime, N'申請中')";
 
             Debug.WriteLine("接続成功");
             using (SqlCommand command = new SqlCommand(sql, con))
