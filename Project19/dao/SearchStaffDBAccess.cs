@@ -15,33 +15,52 @@ namespace Project19.dao
         public List<Staff> GetSearchStaffList(string userName, string fullName, string email, string phoneNumber)
         {
             List<Staff> SearchStaffList = new List<Staff>();
+            bool flag = true;
 
             SqlConnection con = CreateConnection();
-            string sql = "SELECT DISTINCT * FROM Staff WHERE 0 = 0";
+            string sql = "SELECT DISTINCT * FROM Staff";
 
             {
                 Debug.WriteLine("接続成功");
-                if (userName == null && fullName == null && email == null && phoneNumber == null)
+                if (userName != null)
                 {
+                    sql += " WHERE UserName = @useName";
+                    flag = false;
                 }
-                else
+                if (fullName != null)
                 {
-
-                    if (userName != null)
+                    if (flag)
                     {
-                        sql += "AND UserName = @useName ";
+                        sql += " WHWRE FullName = N@fullName";
+                        flag = false;
                     }
-                    if (fullName != null)
+                    else
                     {
-                        sql += "AND FullName = N@fullName ";
+                        sql += " AND FullName = N@fullName";
                     }
-                    if (email != null)
+                }
+                if (email != null)
+                {
+                    if(flag)
                     {
-                        sql += "AND Email = @email ";
+                        sql += " WHERE Email = @email";
+                        flag = false;
                     }
-                    if (phoneNumber != null)
+                    else
                     {
-                        sql += "AND PhoneNumber  = @phoneNumber ";
+                        sql += " AND Email = @email";
+                    }
+                }
+                if (phoneNumber != null)
+                {
+                    if (flag)
+                    {
+                        sql += " WHERE PhoneNumber  = @phoneNumber ";
+                        flag = false;
+                    }
+                    else
+                    {
+                        sql += " AND PhoneNumber  = @phoneNumber ";
                     }
                 }
             }
